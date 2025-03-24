@@ -1,0 +1,231 @@
+/* ------------------------------------------------------- */
+/* --------------------- base styling --------------------*/
+/* ------------------------------------------------------- */
+
+body {
+    font-family: Futura, sans-serif; /* sets the font style for the entire page */
+    text-align: center; /* centers text horizontally */
+    margin-top: 50px; /* adds space at the top of the page */
+}
+
+#lens {
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    cursor: pointer; /* changes cursor to pointer when hovering over the button */
+}
+
+#video {
+    transform: scaleX(-1); /* flips the video so it's mirrored */
+    display: block;
+    margin: auto;
+}
+
+#canvas {
+    display: none;
+}
+
+/* photobooth page */
+.photobooth {
+    display: grid;
+    place-items: center;
+    height: center;
+}
+
+.camera {
+    display: grid;
+    position: relative;
+    width: 80vh;
+    aspect-ratio: 4/3;
+}
+
+#counter {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.2rem;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 10; /* ensures it stays above the video */
+}
+
+/* ------------------------------------------------------- */
+/* ---------------------- photo strip ---------------------*/
+/* ------------------------------------------------------- */
+
+.photoDetails {
+    transform: scaleX(-1);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: none;
+}
+
+#photos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    max-width: 22rem;
+    height: auto;
+    background-color: black;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
+    box-sizing: border-box; /* makes sure the padding is included in the width, not added */
+    flex-shrink: 0;
+    border: 0.07rem solid black; /* thickness and color of the border */
+}
+
+/* ------------------------------------------------------- */
+/* ---------------------- navigation ----------------------*/
+/* ------------------------------------------------------- */
+
+.nextPageButton {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+    font-size: 7rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------------------- */
+/* ----------- frame & filter editor page layout-----------*/
+/* ------------------------------------------------------- */
+
+.editor {
+    position: relative;
+}
+
+.editorContent {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.photoSide {
+    display: flex;
+    width: 40%;
+    margin-left: 10rem;
+    justify-content: center;
+}
+
+.editorSide {
+    display: grid;
+    width: 70%;
+    align-items: start;
+    margin-right: 10rem;
+    justify-content: center;
+}
+
+
+/* ------------------------------------------------------- */
+/* ------------------ frame page buttons ------------------*/
+/* ------------------------------------------------------- */
+
+#palette {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+.frame-button {
+    border-radius: 50%;
+    background-color: data-color;
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    border: 0.3rem solid black;
+}
+
+
+/* ------------------------------------------------------- */
+/* ------------------------ titles ------------------------*/
+/* ------------------------------------------------------- */
+
+.desktopTitle {
+    display: block;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+}
+
+.mobileTitle {
+    display: none;
+}
+
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
+/* -------------- mobile device css styling -------------- */
+/* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #photos {
+        max-width: 16rem;
+    }
+
+    .photoSide {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    .editor {
+        display: flex;
+        margin: 2rem;
+    }
+
+    .editorSide {
+        width: 20%;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+
+    #palette {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .frame-button {
+        display: flex;
+        background-color: data-color;
+        width: 4rem;
+        height: 4rem;
+        border: 0.2rem solid black;
+    }
+
+    .desktopTitle {
+        display: none;
+    }
+
+    .mobileTitle {
+        display: block;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .nextPageButton {
+        position: absolute;
+        width: 20%;
+        right: 2rem;
+        bottom: 2rem;
+        font-size: 5rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}

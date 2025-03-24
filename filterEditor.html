@@ -1,0 +1,37 @@
+<!-- -------------------------------------------------------------------- -->
+<!-- Third page for users to select a filter for their photo strip. -->
+<!-- -------------------------------------------------------------------- -->
+
+<!DOCTYPE html> <!-- declares doc type as html 5 -->
+<html lang = "en"> <!-- defines html lang as english -->
+
+<head>
+    <meta charset = "UTF-8"> <!-- allows special characters to be used -->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> <!-- mobile device scaling -->
+    <title>Filter Editor</title> <!-- sets title -->
+    <link rel="stylesheet" href="style.css"> <!-- links to stylesheet -->
+    <script type="module" src="editor.js"></script> <!-- type = "module" is needed bc it tells browser that JS file might use import/export and to treat it like a module-->
+</head>
+<body data-editor-mode="filter">
+        <div class="editor">
+            <h1 class="editorTitle">Filters</h1>
+            <div class="editorContent">
+                <div id="photos"></div>
+                <div id="filterControls">
+                    <div id="filterPalette">
+                        <button class="filter-buttons" data-color="#800000"></button> <!-- red -->
+                        <button class="filter-buttons" data-color="#FFD288"></button> <!-- orange -->
+                        <button class="filter-buttons" data-color="#FDFD96"></button> <!-- yellow -->
+                        <button class="filter-buttons" data-color="#8DC15A"></button> <!-- green -->
+                        <button class="filter-buttons" data-color="#AEC8E2"></button> <!-- blue -->
+                        <button class="filter-buttons" data-color="#D8C4E5"></button> <!-- purple -->
+                        <button class="filter-buttons" data-color="#FFDADA"></button> <!-- pink -->
+                        <button class="filter-buttons" data-color="#000000"></button> <!-- black -->
+                        <button class="filter-buttons" data-color="#FFFFFF"></button> <!-- white -->
+                    </div>
+                </div>
+        </div>
+        </div>
+</body>
+
+</html>
