@@ -1,5 +1,5 @@
 /* ------------------------------------------------------- */
-/* --------------------- base styling --------------------*/
+/* --------------------- base styling -------------------- */
 /* ------------------------------------------------------- */
 
 body {
@@ -50,12 +50,13 @@ body {
 }
 
 /* ------------------------------------------------------- */
-/* ---------------------- photo strip ---------------------*/
+/* ---------------------- photo strip -------------------- */
 /* ------------------------------------------------------- */
 
 .photoDetails {
     transform: scaleX(-1);
     width: 100%;
+    /* aspect-ratio: 3 / 4; */
     height: auto;
     object-fit: cover;
     border: none;
@@ -66,34 +67,68 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
-    max-width: 22rem;
-    height: auto;
+    box-sizing: border-box; /* makes sure the padding is included in the width, not added */
+    width: clamp(8rem, 18rem, 18.5rem); /* min 8rem, preferred 18rem, max 18.5rem */
+    /* height: auto; */
+    aspect-ratio: 3 / 8;
     background-color: black;
     padding: 1rem;
     padding-top: 1.5rem;
     padding-bottom: 3.5rem;
-    box-sizing: border-box; /* makes sure the padding is included in the width, not added */
     flex-shrink: 0;
     border: 0.07rem solid black; /* thickness and color of the border */
 }
 
 /* ------------------------------------------------------- */
-/* ---------------------- navigation ----------------------*/
+/* ---------------------- navigation --------------------- */
 /* ------------------------------------------------------- */
 
-.nextPageButton {
-    position: absolute;
-    bottom: 2rem;
-    right: 3rem;
-    font-size: 7rem;
+/* .nextPageButton {
+    font-size: 7vw;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+} */
+
+/* .prevPageButton {
+    position: fixed;
+    bottom: 1vw;
+    left: 1vw;
+    font-size: 7vw;
     background-color: transparent;
     border: none;
     cursor: pointer;
+} */
+
+#nextPageButton {
+    display: block;
+    position: fixed;
+    font-size: 7vw;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    bottom: 1vw;
+    right: 2vw;
+    font-size: 7vw;
+}
+
+#prevPageButton {
+    display: block;
+    position: fixed;
+    font-size: 7vw;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    bottom: 1vw;
+    left: 2vw;
+    font-size: 7vw;
 }
 
 
+
+
 /* ------------------------------------------------------- */
-/* ----------- frame & filter editor page layout-----------*/
+/* ----------- frame & filter editor page layout---------- */
 /* ------------------------------------------------------- */
 
 .editor {
@@ -105,56 +140,108 @@ body {
     flex-direction: row;
     align-items: start;
     justify-content: center;
-    gap: 2rem;
+    gap: 10vw;
     width: 100%;
 }
 
 .photoSide {
     display: flex;
-    width: 40%;
-    margin-left: 10rem;
+    max-width: 40%;
+    /* margin: 5vw; */
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-bottom: 3vw;
     justify-content: center;
 }
 
 .editorSide {
     display: grid;
-    width: 70%;
+    max-width: 70%;
     align-items: start;
-    margin-right: 10rem;
+    margin-right: 10vw;
     justify-content: center;
 }
 
-
 /* ------------------------------------------------------- */
-/* ------------------ frame page buttons ------------------*/
+/* ------------------ frame page buttons ----------------- */
 /* ------------------------------------------------------- */
 
 #palette {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2.5vw;
     justify-items: center;
 }
 
 .frame-button {
     border-radius: 50%;
     background-color: data-color;
-    width: 12rem;
-    height: 12rem;
+    /* width: 12vw;
+    height: 12vw; */
     cursor: pointer;
+    /* border: 0.3vw solid black; */
+    
+    width: clamp(4rem, 8vw, 12rem); /* min 4rem, preferred 8vw, max 12rem */
+    height: clamp(4rem, 8vw, 12rem);
     border: 0.3rem solid black;
 }
 
+/* ------------------------------------------------------- */
+/* ------------------ filter page buttons ----------------- */
+/* ------------------------------------------------------- */
+
+/* #palette {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5vw;
+    justify-items: center;
+} */
+
+.filter-button {
+    border-radius: 8px;
+    /* background-color: blue; */
+    /* width: 12vw;
+    height: 12vw; */
+    cursor: pointer;
+    /* border: 0.3vw solid black; */
+    
+    width: clamp(4rem, 8vw, 12rem); /* min 4rem, preferred 8vw, max 12rem */
+    height: clamp(4rem, 8vw, 12rem);
+    border: 0.3rem solid black;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
 
 /* ------------------------------------------------------- */
-/* ------------------------ titles ------------------------*/
+/* ---------------------- save page ---------------------- */
+/* ------------------------------------------------------- */
+#savePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#downloadButton {
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    font-weight: bold;
+    background-color: #FFDADA;
+    width: 10rem;
+    height: 4rem;
+
+    margin: 2vw;
+}
+
+/* ------------------------------------------------------- */
+/* ------------------------ titles ----------------------- */
 /* ------------------------------------------------------- */
 
 .desktopTitle {
     display: block;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    font-size: 3rem;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    font-size: vw;
 }
 
 .mobileTitle {
@@ -167,45 +254,69 @@ body {
 /* ------------------------------------------------------- */
 /* ------------------------------------------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 425px) {
     #photos {
-        max-width: 16rem;
+        max-width: 100vw;
+        /* width: 10rem; */
+        width: clamp(10rem, 16vw, 20rem); /* min 4rem, preferred 8vw, max 12rem */
     }
 
     .photoSide {
-        width: 100%;
-        margin-left: 0;
-        justify-content: flex-end;
+        width: 100vw;
+        margin: 0;
+        /* justify-content: flex-end; */
         flex-direction: column;
     }
 
     .editor {
         display: flex;
-        margin: 2rem;
+        /* margin-left: 2vw; */
     }
 
     .editorSide {
-        width: 20%;
-        margin-right: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 4rem;
+        max-width: 20%;
+        margin-right: 0;
+        margin-left: 10vw;
+        margin-top: 15vw;
     }
 
     #palette {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        gap: 0.75rem;
+        gap: 1vw;
+    }
+
+    #mobilePalette {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .frame-button {
         display: flex;
         background-color: data-color;
-        width: 4rem;
-        height: 4rem;
+        width: 3.5rem;
+        height: 3.5rem;
         border: 0.2rem solid black;
+    }
+
+    .filter-button {
+        border-radius: 8px;
+        /* background-color: blue; */
+        /* width: 12vw;
+        height: 12vw; */
+        cursor: pointer;
+        /* border: 0.3vw solid black; */
+        
+        width: clamp(4rem, 8vw, 12rem); /* min 4rem, preferred 8vw, max 12rem */
+        height: clamp(4rem, 8vw, 12rem);
+        border: 0.3rem solid black;
+        font-size: 2.75vw;
+        font-weight: bold;
     }
 
     .desktopTitle {
@@ -218,14 +329,11 @@ body {
         margin-bottom: 1rem;
     }
 
-    .nextPageButton {
-        position: absolute;
-        width: 20%;
-        right: 2rem;
-        bottom: 2rem;
-        font-size: 5rem;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
+    #nextPageButton {
+        font-size: 4rem;
+    }
+
+    #prevPageButton {
+        font-size: 4rem;
     }
 }

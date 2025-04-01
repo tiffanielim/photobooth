@@ -10,7 +10,7 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> <!-- mobile device scaling -->
     <title>Frame Editor</title> <!-- sets title -->
     <link rel="stylesheet" href="style.css"> <!-- links to stylesheet -->
-    <script type="module" src="editor.js"></script> <!-- type = "module" is needed bc it tells browser that JS file might use import/export and to treat it like a module-->
+    <script type="module" src="editorMain.js"></script> <!-- type = "module" is needed bc it tells browser that JS file might use import/export and to treat it like a module-->
 </head>
 <body data-editor-mode="frame">
         <div class="editor">
@@ -21,22 +21,24 @@
                 </div>
                 <div class="editorSide">
                     <h1 class="desktopTitle">Frame Colors</h1>
-                    <div id="palette">
-                        <button class="frame-button" data-color="#800000"></button> <!-- red -->
-                        <button class="frame-button" data-color="#FFD288"></button> <!-- orange -->
-                        <button class="frame-button" data-color="#FDFD96"></button> <!-- yellow -->
-                        <button class="frame-button" data-color="#8DC15A"></button> <!-- green -->
-                        <button class="frame-button" data-color="#AEC8E2"></button> <!-- blue -->
-                        <button class="frame-button" data-color="#D8C4E5"></button> <!-- purple -->
-                        <button class="frame-button" data-color="#FFDADA"></button> <!-- pink -->
-                        <button class="frame-button" data-color="#000000"></button> <!-- black -->
-                        <button class="frame-button" data-color="#FFFFFF"></button> <!-- white -->
-                        <!-- <button class="frame-button" data-color="#F0E130"></button> bright yellow -->
+                    <div id = mobilePalette>
+                        <div id="palette">
+                            <button class="frame-button" data-color="#800000"></button> <!-- red -->
+                            <button class="frame-button" data-color="#FFD288"></button> <!-- orange -->
+                            <button class="frame-button" data-color="#FDFD96"></button> <!-- yellow -->
+                            <button class="frame-button" data-color="#8DC15A"></button> <!-- green -->
+                            <button class="frame-button" data-color="#AEC8E2"></button> <!-- blue -->
+                            <button class="frame-button" data-color="#D8C4E5"></button> <!-- purple -->
+                            <button class="frame-button" data-color="#FFDADA"></button> <!-- pink -->
+                            <button class="frame-button" data-color="#000000"></button> <!-- black -->
+                            <button class="frame-button" data-color="#FFFFFF"></button> <!-- white -->
+                        </div>
                     </div>
                 </div>
         </div>
         </div>
-        <button class="nextPageButton" id="goToFilterEditor"> > </button>
+        <!-- <button class="nextPageButton" id="goToFilterEditor" id ="desktopNextButton"> > </button> -->
+        <button class="goToFilterEditor" id ="nextPageButton"> > </button>
 </body>
 
 </html>

@@ -1,0 +1,25 @@
+<!-- -------------------------------------------------------------------- -->
+<!-- Fourth page for users to download their photo strip -->
+<!-- -------------------------------------------------------------------- -->
+
+<!DOCTYPE html> <!-- declares doc type as html 5 -->
+<html lang = "en"> <!-- defines html lang as english -->
+
+<head>
+    <meta charset = "UTF-8"> <!-- allows special characters to be used -->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> <!-- mobile device scaling -->
+    <title>Save Photostrip!</title> <!-- sets title -->
+    <link rel="stylesheet" href="style.css"> <!-- links to stylesheet -->
+    <script type="module" src="saveMain.js"></script> <!-- type = "module" is needed bc it tells browser that JS file might use import/export and to treat it like a module-->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script> <!-- allows me to use the library html2canvas -->
+</head>
+<body>
+    <div id = "savePage">
+        <div id="photos"></div>
+        <button id = "downloadButton">DOWNLOAD</button>
+
+        <button class="goToFilterEditor" id ="prevPageButton"> < </button>
+    </div> 
+</body>
+
+</html>
