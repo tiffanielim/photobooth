@@ -11,7 +11,7 @@
 
 <head>
     <meta charset = "UTF-8"> <!-- allows special characters to be used -->
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> <!-- mobile device scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- mobile device scaling -->
     <title>Photobooth</title> <!-- sets title -->
     <link rel="stylesheet" href="style.css"> <!-- links to stylesheet -->
     <script type="module" src="photoboothMain.js"></script> <!-- links JS file for interactivity. defer is it loads javascript only after everything in html is loaded-->
@@ -20,9 +20,8 @@
     <div class="photobooth">
         <div class="camera">
             <span id="counter">0/4</span>
-            <video id="video" autoplay></video>
+            <video id="video" autoplay playsinline muted></video>
         </div>
-        <p></p>
         <button id="lens" onclick="capturePhoto"></button> <!-- triggers capcturePhoto() function when clicked -->
         <canvas id="canvas"></canvas>
     </div>
