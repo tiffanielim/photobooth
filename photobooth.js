@@ -52,6 +52,10 @@ export class Photobooth
             if (this.photoCount === this.maxPhotos)
             {
                 setTimeout(() => {
+                    // clear previously saved styles
+                    localStorage.removeItem("frameColor");
+                    localStorage.removeItem("photoFilter");
+
                     // save photos array to localStorage so they can be used on next page
                     localStorage.setItem("photos", JSON.stringify(this.photos));
                     window.location.href = "frameEditor.html"; // directs user to editor page where photos are also displayed
