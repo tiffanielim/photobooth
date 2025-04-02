@@ -72,7 +72,7 @@ body {
 .photoDetails {
     transform: scaleX(-1);
     width: 100%;
-    /* aspect-ratio: 3 / 4; */
+    aspect-ratio: 4 / 3; /* locks aspect ratio so it's always landscape, important for mobile rsponsive design*/
     height: auto;
     object-fit: cover;
     border: none;
@@ -140,9 +140,6 @@ body {
     font-size: 7vw;
 }
 
-
-
-
 /* ------------------------------------------------------- */
 /* ----------- frame & filter editor page layout---------- */
 /* ------------------------------------------------------- */
@@ -164,9 +161,10 @@ body {
     display: flex;
     max-width: 40%;
     /* margin: 5vw; */
-    margin-left: 3vw;
+    /* margin-left: 3vw;
     margin-right: 3vw;
-    margin-bottom: 3vw;
+    margin-bottom: 3vw; */
+    margin: 3vw;
     justify-content: center;
 }
 
@@ -265,6 +263,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 2vw;
+    gap: 1vw;
 }
 
 #downloadButton {
@@ -273,10 +273,8 @@ body {
     font-size: 1.5vw;
     font-weight: bold;
     background-color: #FFDADA;
-    width: 10rem;
+    width: 15rem;
     height: 4rem;
-
-    margin: 2vw;
 }
 
 /* ------------------------------------------------------- */
@@ -296,11 +294,17 @@ body {
 
 /* ------------------------------------------------------- */
 /* ------------------------------------------------------- */
+/* ------------------------------------------------------- */
 /* -------------- mobile device css styling -------------- */
+/* ------------------------------------------------------- */
 /* ------------------------------------------------------- */
 /* ------------------------------------------------------- */
 
 @media (max-width: 425px) {
+
+/* ------------------------------------------------------- */
+/* ----------------------- photobooth -------------------- */
+/* ------------------------------------------------------- */
     .photobooth {
         margin-right: 1rem;
         margin-left: 1rem;
@@ -312,11 +316,19 @@ body {
         right: 3vw;
     }
 
-    #photos {
-        max-width: 100vw;
-        /* width: 10rem; */
-        width: clamp(10rem, 16vw, 20rem); /* min 4rem, preferred 8vw, max 12rem */
-    }
+/* ------------------------------------------------------- */
+/* ---------------------- photo strip -------------------- */
+/* ------------------------------------------------------- */
+
+#photos {
+    max-width: 100vw;
+    /* width: 10rem; */
+    width: clamp(10rem, 16vw, 20rem); /* min 4rem, preferred 8vw, max 12rem */
+}
+
+/* ------------------------------------------------------- */
+/* ----------- frame & filter editor page layout---------- */
+/* ------------------------------------------------------- */
 
     .photoSide {
         width: 100vw;
@@ -375,6 +387,24 @@ body {
         font-weight: bold;
     }
 
+/* ------------------------------------------------------- */
+/* ---------------------- save page ---------------------- */
+/* ------------------------------------------------------- */
+
+#savePage {
+    margin: 20vw;
+}
+
+#downloadButton {
+    font-size: 5vw;
+    width: 10rem;
+    height: 4rem;
+}
+
+/* ------------------------------------------------------- */
+/* ------------------------ titles ----------------------- */
+/* ------------------------------------------------------- */
+
     .desktopTitle {
         display: none;
     }
@@ -384,6 +414,10 @@ body {
         font-size: 1.75rem;
         margin-bottom: 1rem;
     }
+
+/* ------------------------------------------------------- */
+/* ---------------------- navigation --------------------- */
+/* ------------------------------------------------------- */
 
     #nextPageButton {
         font-size: 4rem;
