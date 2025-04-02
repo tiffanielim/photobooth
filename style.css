@@ -190,27 +190,56 @@ body {
 /* ------------------ filter page buttons ----------------- */
 /* ------------------------------------------------------- */
 
-/* #palette {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5vw;
-    justify-items: center;
-} */
-
 .filter-button {
-    border-radius: 8px;
-    /* background-color: blue; */
-    /* width: 12vw;
-    height: 12vw; */
-    cursor: pointer;
-    /* border: 0.3vw solid black; */
-    
-    width: clamp(4rem, 8vw, 12rem); /* min 4rem, preferred 8vw, max 12rem */
+    width: clamp(4rem, 8vw, 12rem);
     height: clamp(4rem, 8vw, 12rem);
     border: 0.3rem solid black;
-    font-size: 1.5vw;
+    border-radius: 8px;
     font-weight: bold;
-}
+    font-size: 1.5vw;
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Individual filter covers */
+  .filter-original {
+    background-color: #cceeff;
+  }
+  
+  .filter-sepia {
+    background-color: #fff5cc;
+  }
+  
+  .filter-contrast {
+    background: linear-gradient(135deg, #ffffff, #000000, #00ff00);
+    color: white;
+  }
+  
+  .filter-invert {
+    background: linear-gradient(135deg, #c6f1ff, #4a90e2, #001f3f);
+    color: white;
+  }
+  
+  .filter-hue {
+    background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00, #ff0000);
+  }
+  
+  .filter-warm {
+    background: linear-gradient(to bottom right, #ffc1a1, #ffecb3);
+  }
+  
+  .filter-mono {
+    background: linear-gradient(to bottom right, white, #555555);
+  }
+
+  .filter-mono2 {
+    background: linear-gradient(to bottom right, white, black);
+  }
+
+  .filter-mono3 {
+    background: linear-gradient(to bottom right, white, #fff5cc, black);
+  }
+  
 
 /* ------------------------------------------------------- */
 /* ---------------------- save page ---------------------- */
@@ -311,7 +340,6 @@ body {
         height: 12vw; */
         cursor: pointer;
         /* border: 0.3vw solid black; */
-        
         width: clamp(4rem, 8vw, 12rem); /* min 4rem, preferred 8vw, max 12rem */
         height: clamp(4rem, 8vw, 12rem);
         border: 0.3rem solid black;

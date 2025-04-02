@@ -88,7 +88,7 @@ export class Editor
     initializeFilterEditor()
     {
         this.filterButtons = document.querySelectorAll(".filter-button");
-        this.setFilterCover();
+        // this.setFilterCover(); //i decided to manually set up the covers of the filtes using CSS
         this.addFilterListeners();
 
         const savedFilter = localStorage.getItem("photoFilter");

@@ -23,12 +23,15 @@
                     <h1 class="desktopTitle">Filters</h1>
                     <div id = mobilePalette>
                         <div id="palette">
-                            <button class="filter-button" data-filter="none">original</button>           <!-- original -->
-                            <button class="filter-button" data-filter="grayscale(100%)">mono</button>    <!-- grayscale -->
-                            <button class="filter-button" data-filter="sepia(100%)">sepia</button>        <!-- sepia -->
-                            <button class="filter-button" data-filter="contrast(200%)">contrast</button>   <!-- contrast -->
-                            <button class="filter-button" data-filter="invert(100%)">invert</button>   <!-- invert -->
-                            <button class="filter-button" data-filter="hue-rotate(90deg)">switch colors</button>   <!-- hue-rotate -->
+                            <button class="filter-button filter-original" data-filter="none">original</button>           <!-- original -->
+                            <button class="filter-button filter-sepia" data-filter="sepia(100%)">sepia</button>        <!-- sepia -->
+                            <button class="filter-button filter-contrast" data-filter="contrast(200%)">contrast</button>   <!-- contrast -->
+                            <button class="filter-button filter-invert" data-filter="invert(100%)">invert</button>   <!-- invert -->
+                            <button class="filter-button filter-hue" data-filter="hue-rotate(90deg)">switch colors</button>   <!-- hue-rotate -->
+                            <button class="filter-button filter-warm" data-filter="hue-rotate(-10deg) saturate(1.5)">warm</button>   <!-- hue-rotate -->
+                            <button class="filter-button filter-mono" data-filter="grayscale(100%)">mono</button>    <!-- grayscale -->
+                            <button class="filter-button filter-mono2" data-filter="grayscale(100%) contrast(200%)">mono 2</button>    <!-- more black and white -->
+                            <button class="filter-button filter-mono3" data-filter="grayscale(200%) sepia(30%) contrast(200%)">mono 3</button>    <!-- booth by bryan inspo -->
                         </div>
                     </div>
                 </div>
